@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OptimaDesk.Domain\OptimaDesk.Domain.csproj" />
+    <ProjectReference Include="..\OptimaDesk.Infrastructure\OptimaDesk.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
