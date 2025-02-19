@@ -1,9 +1,10 @@
-﻿using OptimaDesk.Domain.RetailStations;
+﻿using OptimaDesk.Common.Models;
+using OptimaDesk.Domain.RetailStations;
 using System.ComponentModel.DataAnnotations;
 
 namespace OptimaDesk.Domain.Users
 {
-    public class StationManager
+    public class StationManager : BaseEntity
     {
         [Required]
         public string? AppUserId { get; set; }

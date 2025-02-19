@@ -40,10 +40,12 @@ namespace OptimaDesk.Domain.Users
         public int LoginCount { get; set; } = 0;
 
         // Metadata for auditing
+        public bool IsActive { get; set; }
         public string? CreatedBy { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public string? UpdatedBy { get; set; }
         public DateTime? UpdatedAt { get; set; }
+        public bool IsDeleted { get; set; }
          public int? Version { get; set; }
     }
 }

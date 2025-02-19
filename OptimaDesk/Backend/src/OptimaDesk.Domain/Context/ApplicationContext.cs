@@ -78,6 +78,14 @@ namespace OptimaDesk.Domain.Context
                 property.SetColumnType("decimal(18,2)");
             }
 
+            // String Properties
+            foreach (var property in builder.Model.GetEntityTypes()
+             .SelectMany(t => t.GetProperties())
+             .Where(p => p.ClrType == typeof(string)))
+            {
+                property.SetMaxLength(255);
+            }
+
             builder.Entity<AppUser>()
                 .HasIndex(t => t.Email)
                 .IsUnique();
