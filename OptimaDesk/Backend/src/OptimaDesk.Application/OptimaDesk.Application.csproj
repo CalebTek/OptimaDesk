@@ -27,6 +27,7 @@
   <ItemGroup>
     <Folder Include="Authentication\UserPassword\" />
     <Folder Include="Authentication\Registration\" />
+    <Folder Include="RetailStation\Pumps\Queries\" />
     <Folder Include="Users\Commands\" />
   </ItemGroup>
 

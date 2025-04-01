@@ -1410,6 +1410,9 @@ namespace OptimaDesk.Domain.Migrations
                     b.Property<decimal>("TotalSales")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<decimal>("Totalizer")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("Type")
                         .HasColumnType("int");
 

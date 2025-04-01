@@ -12,8 +12,8 @@ using OptimaDesk.Domain.Context;
 namespace OptimaDesk.Domain.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20250208103004_V2")]
-    partial class V2
+    [Migration("20250305160039_V1")]
+    partial class V1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1411,6 +1411,9 @@ namespace OptimaDesk.Domain.Migrations
                         .HasColumnType("nvarchar(255)");
 
                     b.Property<decimal>("TotalSales")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Totalizer")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Type")

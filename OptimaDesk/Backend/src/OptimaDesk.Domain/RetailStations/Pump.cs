@@ -1,5 +1,6 @@
 ﻿using OptimaDesk.Common.Enums;
 using OptimaDesk.Common.Models;
+using OptimaDesk.Domain.Sales;
 using System.ComponentModel.DataAnnotations;
 
 namespace OptimaDesk.Domain.RetailStations
@@ -27,15 +28,17 @@ namespace OptimaDesk.Domain.RetailStations
         [Required]
         public decimal ClosingMeter { get; set; }
 
-        public decimal Totalizer => ClosingMeter - OpeningMeter;
+        public decimal Totalizer { get; set; }
 
         public decimal RTT { get; set; } 
 
         public decimal TotalSales { get; set; }
 
-        public decimal ActualSales => TotalSales - RTT; 
-
+        public decimal ActualSales => TotalSales - RTT;
+        //public string? PumpSalesId { get; set; }
+        
         // Navigation property
         public virtual RetailStation? Station { get; set; }
+        //public virtual PumpSales? PumpSales { get; set; }
     }
 }

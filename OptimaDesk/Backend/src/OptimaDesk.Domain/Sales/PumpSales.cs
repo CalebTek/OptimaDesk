@@ -9,6 +9,8 @@ namespace OptimaDesk.Domain.Sales
     /// </summary>
     public class PumpSales : BaseEntity
     {
+        // This shoulld updated, should have pump id, there should another entity this is connected to
+        // for auidt report
         [Required]
         public string? RetailStationId { get; set; }
 

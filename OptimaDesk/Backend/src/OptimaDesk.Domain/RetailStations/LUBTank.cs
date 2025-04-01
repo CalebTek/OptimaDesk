@@ -1,4 +1,5 @@
 ﻿using OptimaDesk.Common.Models;
+using OptimaDesk.Domain.Stock;
 using System.ComponentModel.DataAnnotations;
 
 namespace OptimaDesk.Domain.RetailStations
@@ -34,9 +35,12 @@ namespace OptimaDesk.Domain.RetailStations
 
         public decimal QuantityTransferred { get; set; }
 
-        public decimal TankSales => OpeningVolume + QuantityReceived - QuantityTransferred - ClosingVolume; 
+        public decimal TankSales => OpeningVolume + QuantityReceived - QuantityTransferred - ClosingVolume;
+
+        //public string? StockPositionId { get; set; }
 
         // Navigation property
         public virtual RetailStation? Station { get; set; }
+        //public virtual StockPosition? StockPosition { get; set; }
     }
 }

@@ -8,6 +8,7 @@ using OptimaDesk.Domain.Sales;
 using OptimaDesk.Domain.Stock;
 using OptimaDesk.Domain.Users;
 using System.Reflection;
+using System.Reflection.Emit;
 
 namespace OptimaDesk.Domain.Context
 {
@@ -48,7 +49,7 @@ namespace OptimaDesk.Domain.Context
         {
             foreach (var item in ChangeTracker.Entries<BaseEntity>())
             {
-                switch (item.State)
+                    switch (item.State)
                 {
                     case EntityState.Modified:
                         item.Entity.UpdatedAt = DateTime.UtcNow;
@@ -93,6 +94,36 @@ namespace OptimaDesk.Domain.Context
             builder.Entity<AppUser>()
                 .HasIndex(t => t.PhoneNumber)
                 .IsUnique();
+
+            //builder.Entity<Pump>()
+            //     .HasOne(p => p.PumpSales)
+            //     .WithMany(ps => ps.PMSPumps)
+            //     .HasForeignKey(p => p.PumpSalesId)
+            //     .OnDelete(DeleteBehavior.Cascade);
+
+            //builder.Entity<Pump>()
+            //    .HasOne(p => p.PumpSales)
+            //    .WithMany(ps => ps.AGOPumps)
+            //    .HasForeignKey(p => p.PumpSalesId)
+            //    .OnDelete(DeleteBehavior.Cascade);
+
+            //builder.Entity<UGTank>()
+            //    .HasOne(u => u.StockPosition)
+            //    .WithMany(sp => sp.PMSTanks)
+            //    .HasForeignKey(u => u.StockPositionId)
+            //    .OnDelete(DeleteBehavior.Cascade);
+
+            //builder.Entity<UGTank>()
+            //    .HasOne(u => u.StockPosition)
+            //    .WithMany(sp => sp.AGOTanks)
+            //    .HasForeignKey(u => u.StockPositionId)
+            //    .OnDelete(DeleteBehavior.Cascade);
+
+            //builder.Entity<LUBTank>()
+            //    .HasOne(u => u.StockPosition)
+            //    .WithMany(sp => sp.LUBTanks)
+            //    .HasForeignKey(u => u.StockPositionId)
+            //    .OnDelete(DeleteBehavior.Cascade);
 
             base.OnModelCreating(builder);
         }

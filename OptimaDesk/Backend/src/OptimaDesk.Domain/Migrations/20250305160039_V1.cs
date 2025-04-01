@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -46,6 +47,7 @@ namespace OptimaDesk.Domain.Migrations
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedBy = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     Version = table.Column<int>(type: "int", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -860,6 +862,7 @@ namespace OptimaDesk.Domain.Migrations
                     Type = table.Column<int>(type: "int", nullable: false),
                     OpeningMeter = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     ClosingMeter = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Totalizer = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     RTT = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     TotalSales = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     PumpSalesId = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: true),
